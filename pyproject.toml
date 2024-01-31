@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "vataga trading platform backend"
+version = "0.1.0"
+description = ""
+authors = [
+    "Andrei Etmanov <etmanov@vataga.trading>",
+    "Aleksandr Korovin <korovin@vataga.trading>",
+    "Nikita Smyatsky <smiatskii@vataga.trading>",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.109.0"
+httpx = "^0.26.0"
+pydantic = "^2.6.0"
+sentry-sdk = "^1.40.0"
+prometheus-client = "^0.19.0"
+uvicorn = "^0.27.0.post1"
+pydantic-settings = "^2.1.0"
+elastic-apm = "^6.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.15"
+
+[tool.ruff]
+select = ["A", "B", "E", "F", "I", "N", "W"]
+line-length = 120
+target-version = "py310"
+
+ignore = [
+    "B005",
+    "B904",
+    "N818",
+    "E501"
+]
+
+exclude = [
+    ".data",
+    ".git",
+    ".idea",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
